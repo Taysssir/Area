@@ -1,0 +1,285 @@
+package eos.sdk;
+
+// From Server -> Client - Give all data robot subscription
+message RobotDataSubscription
+{
+  repeated uint32 dataIndex = 1;
+  optional bool All = 2 [default = false];
+}
+
+//  DATA Server -> client - contains PORT value parameters
+message Protocol {
+  enum Port {
+    PORT = 55499;
+  }
+}
+
+// DATA Server -> client - manage a camera URL - contained in Robot info
+message Camera {
+  enum Type {
+   MAIN = 0;
+   SIDE_UP = 1;
+   SIDE_MIDDLE = 2;
+   SIDE_DOWN = 3;
+   THERMIC = 4;
+  }
+   optional Type type = 1 [default = MAIN];
+   optional string ip_address = 2;
+   optional uint32 port = 3  [default = 0];
+   optional uint32 id = 4 [default = 0];
+}
+
+
+// DATA Server vers client - Envoie les information du robot - a la connection du client - tableau de string avec les urls
+message RobotInfo {
+  optional string name = 1;
+  optional uint64 uptime = 2;
+  optional string filepath = 3;
+  optional string robot_type = 4;
+  repeated Camera camera = 5;
+}
+
+// CMD Client Server - permet d'envoyer les commandes au Robot
+message JoystickCommand {
+  required float x = 1;
+  required float y = 2;
+  optional bool super = 3 [default = false];
+}
+
+// CMD Client Server - permet de commander la rotation
+message Turn {
+  enum Sens {
+    LEFT = 0;
+    RIGHT = 1;
+  }
+  required Sens sens = 1 [default = LEFT];
+}
+
+// CMD client Server - stop le robot
+message Stop {
+}
+
+// CMD Client server - Change le mode du robot
+message SetRobotMode {
+  enum  Type {
+    AUTOMATIC = 0;
+    MANUAL = 1;
+  }
+  required Type type = 1 [default = AUTOMATIC];
+}
+
+// CMD client server - move robot to a position
+message MoveTo {
+  required int64 x = 1;
+  required int64 y = 2;
+  required double theta = 3;
+}
+
+// CMD Client -> Server - Active ou non la sirene
+message Hooter {
+  required bool active = 1;
+}
+
+// CMD client -> Server - Set l'état du docking du robot en active ou non
+message ToggleCharging {
+  required bool active = 1;
+}
+// CMD client -> Server -
+message ToggleComponentsPowerSupply {
+  required bool active = 1;
+}
+// DATA server->client - update robot position
+message RobotPosition {
+  required int64 x = 1;
+  required int64 y = 2;
+  required double theta = 3;
+}
+
+//  affichage en temps réelle
+message RobotVelocity {
+  required float linear = 1;
+  required float angular = 2;
+}
+
+// DATA Server -> client - Contient les différents états du robot
+message RobotState {
+  enum  Type {
+    READY = 0;
+    CHARGING = 1;
+    REMAPPING = 2;
+    PATROLLING = 3;
+    MANUAL_CONTROLLED = 4;
+    ALARM = 5;
+    JOB_END = 6;
+  }
+  required Type type = 1;
+}
+
+// DATA Server -> client - Notifie des problèmes liés au materiel
+message HardwareIssue {
+   enum Issue {
+    OBSTRUCTED_LASER = 0;
+    MISSING_MAIN_LASER = 1;
+    MISSING_THERMIC_CAMERA = 2;
+    MISSING_OPTICAL_CAMERA = 3;
+    MISSING_CONTROL_BOARD = 4;
+    MISSING_SECURITY_LASER = 5;
+    LOW_BATTERY = 6;
+    CHARGING_FAILURE = 7;
+    NETWORK_FAILURE = 8;
+  }
+  required Issue issue = 1;
+}
+
+// DATA Server -> client  Met à jour l'état d'une alarme particulière
+message Alarm {
+  enum  Type {
+    DISAPPEARED_OBJECT = 1;
+    FIXED_OBSTACLE = 2;
+    MOBILE_OBSTACLE = 3;
+    HOTPOINT = 4;
+    ROBOT_HARDWARE_ISSUE = 5;
+    ROBOT_BLOCKED = 6;
+    ROBOT_LOST = 7;
+  }
+
+  enum Status {
+    ON = 0;
+    OFF = 1;
+    UPDATE = 2;
+  }
+
+  required uint32 id = 1;
+  required uint32 x = 2;
+  required uint32 y = 3;
+  required uint32 distance = 4;
+  required Type type = 5;
+  required Status status = 6;
+}
+// DATA Server -> client : Alarm update
+message AlarmUpdate {
+  required int32 id = 1;
+  required uint32 x = 2;
+  required uint32 y = 3;
+  required uint32 distance = 4;
+}
+
+// DATA Server -> client : Donne l'état de la batterie
+message BatteryState {
+  enum State {
+    CHARGING = 1;
+    DISCHARGING = 2;
+  }
+  required State state = 1;
+  required float level = 2;
+  required float tension = 3;
+}
+
+// NEVER USED Donne les données laser
+message LaserShot {
+  repeated float x_array = 1;
+  repeated float y_array = 2;
+}
+
+// CMD client -> server - Declare MONITOR
+message RobotMonitoring {
+  optional uint64 current_score = 3;
+  optional uint64 min_score = 4;
+  optional uint64 max_score = 5;
+  optional uint64 avg_score = 6;
+  optional uint64 switch_to_mapping = 7;
+  optional uint64 switch_to_localization = 8;
+  optional uint64 switch_to_relocalization = 9;
+  optional LaserShot laser = 10;
+}
+
+// CMD client -> Server - change les données du score
+message ScoresThreshold {
+  required uint64 switch_to_mapping = 1;
+  required uint64 switch_to_localization = 2;
+  required uint64 switch_to_relocalization = 3;
+}
+// CMD client -> Server - change les données du Patrolling
+message ControlPatrolling {
+  enum ACTION {
+    START = 1;
+    STOP = 2;
+  }
+  required ACTION action = 1;
+  required string patrol_name = 2;
+  required uint32 duration = 3;
+}
+
+// CMD client -> Server  -active  l'état de l'arret d'urgence
+message EmergencyStop {
+  required bool active = 1;
+}
+
+// CMD client -> Server -  l'ajout d'un Obstacle dynamique
+message DynamicObstacle {
+  required bool active = 1;
+  required uint32 x = 2;
+  required uint32 y = 3;
+  required uint32 radius = 4;
+}
+
+//CMD client -> Server -  la suppression des obstacles dynamique
+message ClearDynamicObstacles {
+
+}
+
+// DATA Server -> client - donne l'état des capteurs
+message RobotSensor {
+  enum Type {
+    DISTANCE =0;
+    ON_OFF = 1;
+    TEMPERATURE = 2;
+    HYDROMETRY = 3;
+  }
+  required string path = 1;
+  required Type type = 2;
+  required string unit = 3;
+  required float value = 4;
+}
+// DATA Server -> client - contient la liste des capteurs
+message RobotSensors {
+  repeated RobotSensor sensors = 1;
+}
+
+message NewMapAvailable {
+}
+message CartoOrder {
+  enum Action {
+    START = 1;
+    PAUSE = 2;
+    STOP = 3;
+    ABORT = 4;
+  }
+  required Action action = 1;
+  optional float  resolution = 2;
+  optional uint32 size = 3;
+}
+
+message CartoState {
+  enum State {
+    STATE_STARTED = 1;
+    STATE_PAUSED = 2;
+    STATE_STOPPED = 3;
+  }
+  enum Result {
+    RESULT_OK = 1;
+    RESULT_ERROR = 2;
+  }
+  required State state = 1;
+  required Result result = 2;
+  required string description = 3;
+}
+
+message Version{
+ required uint64 value = 1 [default = 20161108];
+
+}
+
+message Reboot{
+
+}

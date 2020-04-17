@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RobotConfiguration</class>
+ <widget class="QWidget" name="RobotConfiguration">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>498</width>
+    <height>492</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+        border: 1px solid #AAAAAA;
+        border-radius: 3px;
+        background: rgb(255, 255, 255);
+        color: black;
+
+
+        height: 30px;
+}
+QPushButton:hover{
+        background: solid #f0bf8e;
+}
+QPushButton:pressed {
+        background: solid #f07f10;
+        padding-top: 1px;
+}
+QPushButton:!enabled
+{
+    color: solid #AAAAAA;
+    border: 1px solid #AAAAAA;;
+}
+QpushButton:focus
+{
+selection-color: yellow;
+}
+
+QListWidget
+{
+ border: 1px solid #8f8f91;
+}
+QListWidget::item:selected
+{color: #333538;
+}
+QListWidget::item
+{ color: #212121;
+border: 2px solid #afafaf;
+}
+
+
+QLineEdit {
+border: 1px solid #8f8f91;
+border-radius: 0px;
+background-color: white;
+min-width: 80px;
+}
+
+QListWidget
+{
+ border: 1px solid #8f8f91;
+}
+QListWidget::item:selected
+{color: #333538;
+}
+QListWidget::item
+{ color: #212121;
+border: 2px solid #afafaf;
+}
+
+
+QComboBox
+{
+    color:black;
+    background-color: white;
+    border-color: rgba(0,0,0,100%);
+    border: 1px solid #8f8f91;
+    border-width: 1px;
+    border-style: solid;
+}
+
+QComboBox QListView
+{
+    border-style: solid;
+    background-color: white;
+     border: 1px solid #8f8f91;
+}
+
+QComboBox::drop-down
+{  background-color: white;
+    width: 20px;
+    border: 1px;
+    border-color:black;
+    border-left-style:none;
+    border-top-style: noner;
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+QComboBox::down-arrow
+{
+    image: url(:/images/comboicon);
+    width: 16px;
+    height: 16px;
+}
+
+QMenu 
+{
+	background: rgb(38,38,38);
+    color: white;
+    border: 1px solid rgb(60,60,60);
+}
+
+&quot;QToolBar&quot;
+{ background-color: rgb(38,38,38); 
+  background-image: url(:/icons/toolbar/background); 
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+QToolBar QToolButton:hover 
+{
+	background : rgb(60,60,60);
+}
+
+QToolBar QToolButton:pressed 
+{
+	background : rgb(50,50,50);
+}</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>525</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <property name="fieldGrowthPolicy">
+     <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+    </property>
+    <item row="0" column="0" colspan="2">
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_disbeldoupt">
+       <property name="text">
+        <string>automatic_go_back_patrol (mm:ss) :</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBox_dispeldoubt">
+       <property name="text">
+        <string>activate</string>
+       </property>
+      </widget>
+      <widget class="QTimeEdit" name="timeEdit_dispeldoubt">
+       <property name="wrapping">
+        <bool>false</bool>
+       </property>
+       <property name="displayFormat">
+        <string>mm:ss</string>
+       </property>
+       <property name="time">
+        <time>
+         <hour>0</hour>
+         <minute>0</minute>
+         <second>30</second>
+        </time>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QCheckBox" name="checkBox_axiscamera">
+      <property name="text">
+       <string>enable_show_camera_axis</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QCheckBox" name="checkBox_thermiccamera">
+      <property name="text">
+       <string>enable_camera_thermic_access</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QCheckBox" name="checkBox_backupcamera">
+      <property name="text">
+       <string>enable_record_alarme_case</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="6" column="0" colspan="2">
+     <widget class="QPushButton" name="pushButton_apply">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>save</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>checkBox_dispeldoubt</tabstop>
+  <tabstop>timeEdit_dispeldoubt</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

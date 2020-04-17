@@ -1,0 +1,9 @@
+[submodule "evigilante_configuration"]
+	path = evigilante_configuration
+	url = git@MORPHEUS:V2/evigilante_configuration.git
+[submodule "sentinel-common"]
+	path = sentinel-common
+	url = git@MORPHEUS:V2/sentinel-common.git
+[submodule "evigilante_sdk"]
+	path = evigilante_sdk
+	url = git@MORPHEUS:V2/evigilante_sdk.git

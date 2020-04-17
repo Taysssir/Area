@@ -1,0 +1,122 @@
+<RCC>
+    <qresource prefix="/icons/toolbar">
+        <file alias="play">Resources/toolbar/play.png</file>
+        <file alias="about">Resources/toolbar/about.png</file>
+        <file alias="aboutf">Resources/toolbar/about_f.png</file>
+        <file alias="add">Resources/toolbar/add.png</file>
+        <file alias="addf">Resources/toolbar/add_f.png</file>
+        <file alias="calandar">Resources/toolbar/calendar.png</file>
+        <file alias="calendarf">Resources/toolbar/calendar_f.png</file>
+        <file alias="configuration">Resources/toolbar/configuration.svg</file>
+        <file alias="configurationf">Resources/toolbar/configuration_f.svg</file>
+        <file alias="fail_t">Resources/toolbar/delete.png</file>
+        <file alias="failold">Resources/toolbar/delete_f.png</file>
+        <file alias="download">Resources/toolbar/download.png</file>
+        <file alias="downloadf">Resources/toolbar/download_f.png</file>
+        <file alias="exit">Resources/toolbar/exit.png</file>
+        <file alias="exitf">Resources/toolbar/exit_f.png</file>
+        <file alias="mapbuilder">Resources/toolbar/mapbuilder.png</file>
+        <file alias="mapbuilderf">Resources/toolbar/mapbuilder_f.png</file>
+        <file alias="remove">Resources/toolbar/remove.png</file>
+        <file alias="save">Resources/toolbar/save.png</file>
+        <file alias="savef">Resources/toolbar/save_f.png</file>
+        <file alias="upload">Resources/toolbar/upload.png</file>
+        <file alias="uploadf">Resources/toolbar/upload_f.png</file>
+        <file alias="zone">Resources/toolbar/zone.png</file>
+        <file alias="removef">Resources/toolbar/remove_h.png</file>
+        <file alias="transparent_background">Resources/toolbar/background_transparent.png</file>
+        <file alias="ok_t">Resources/toolbar/check.png</file>
+        <file alias="okold">Resources/toolbar/check_f.png</file>
+        <file alias="eraser">Resources/toolbar/eraser.png</file>
+        <file alias="pencil_white">Resources/toolbar/pencil_white.png</file>
+        <file alias="pencil_black">Resources/toolbar/pencil_black.png</file>
+        <file alias="pencil_gray">Resources/toolbar/pencil_gray.png</file>
+        <file alias="fail">Resources/toolbar/off.png</file>
+        <file alias="ok">Resources/toolbar/on.png</file>
+        <file alias="addpoint">Resources/toolbar/add_point.png</file>
+        <file alias="sensors_editor">Resources/toolbar/sensors_editor.png</file>
+        <file alias="map_rotation">Resources/toolbar/map_rotation.png</file>
+        <file alias="ruler">Resources/toolbar/ruler.png</file>
+        <file alias="map_edit">Resources/toolbar/map_edit.png</file>
+        <file alias="map_import">Resources/toolbar/import_map.png</file>
+        <file alias="circle">Resources/toolbar/circle.png</file>
+        <file alias="circle_white">Resources/toolbar/circle_white.png</file>
+        <file alias="circle_black">Resources/toolbar/circle_black.png</file>
+        <file alias="circle_gray">Resources/toolbar/circle_gray.png</file>
+        <file alias="square_white">Resources/toolbar/square_white.png</file>
+        <file alias="square_black">Resources/toolbar/square_black.png</file>
+        <file alias="square_gray">Resources/toolbar/square_gray.png</file>
+        <file alias="background">Resources/toolbar/background.png</file>
+        <file alias="undo">Resources/toolbar/undo.png</file>
+        <file alias="record">Resources/toolbar/record.png</file>
+        <file alias="stop">Resources/toolbar/stop.png</file>
+        <file alias="pause">Resources/toolbar/pause.png</file>
+        <file alias="new">Resources/toolbar/new.png</file>
+        <file alias="open">Resources/toolbar/open.png</file>
+        <file alias="saveas">Resources/toolbar/saveas.png</file>
+        <file alias="try_connect">Resources/toolbar/try_connect.png</file>
+        <file alias="help">Resources/toolbar/help.png</file>
+        <file alias="reboot_robot">Resources/toolbar/reboot_robot.png</file>
+    </qresource>
+    <qresource prefix="/map">
+        <file alias="green_point">Resources/map/point_green.svg</file>
+        <file alias="red_point">Resources/map/point_red.svg</file>
+        <file alias="point">Resources/map/point.svg</file>
+        <file alias="nodetection">Resources/map/nodetection.svg</file>
+        <file alias="nomovement">Resources/map/nomovement.svg</file>
+        <file alias="noremapping">Resources/map/noremapping.svg</file>
+        <file alias="point_high">Resources/map/point_high_priority.svg</file>
+        <file alias="point_incorrect">Resources/map/point_incorrect.svg</file>
+        <file alias="evigilante">Resources/map/evigilante.svg</file>
+        <file alias="robot_manipulation">Resources/map/robot_manipulation.jpg</file>
+    </qresource>
+    <qresource prefix="/patrol">
+        <file alias="icon">Resources/patrol/icon.png</file>
+    </qresource>
+    <qresource prefix="/sensors">
+        <file alias="robotdock">Resources/sensors/robotdock.svg</file>
+        <file alias="door">Resources/sensors/door.svg</file>
+        <file alias="barrier">Resources/sensors/barrier.svg</file>
+        <file alias="radar">Resources/sensors/radar.svg</file>
+        <file alias="rack">Resources/sensors/rack.svg</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="background">Resources/splash/splash-e_admin.png</file>
+        <file alias="comboicon">Resources/splash/comboboxicon.png</file>
+    </qresource>
+    <qresource prefix="/about">
+        <file alias="background">Resources/about/background.png</file>
+    </qresource>
+    <qresource prefix="/calendar">
+        <file alias="colors">Resources/calendar/colors.jpg</file>
+        <file>Resources/calendar/patrol_selected_color.png</file>
+        <file>Resources/calendar/patrol_color.png</file>
+        <file>Resources/calendar/week.png</file>
+        <file>Resources/calendar/month.png</file>
+        <file>Resources/calendar/day.png</file>
+        <file>Resources/calendar/previous.png</file>
+        <file>Resources/calendar/next.png</file>
+    </qresource>
+    <qresource prefix="/context_menus">
+        <file alias="delete">Resources/context_menus/delete.png</file>
+        <file alias="edit">Resources/context_menus/edit.png</file>
+        <file alias="change_priority">Resources/context_menus/change_priority.png</file>
+        <file alias="normal_priority">Resources/context_menus/normal_priority.png</file>
+        <file alias="high_priority">Resources/context_menus/high_priority.png</file>
+        <file alias="change_index">Resources/context_menus/change_index.png</file>
+    </qresource>
+    <qresource prefix="/configuration">
+        <file alias="account">Resources/configuration/account.svg</file>
+        <file alias="network">Resources/configuration/network.svg</file>
+        <file alias="siadc09">Resources/configuration/siadc09.png</file>
+        <file alias="rest_api">Resources/configuration/rest_api.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file alias="font">Resources/font.ttf</file>
+    </qresource>
+    <qresource prefix="/translations">
+        <file alias="sentinel-admin_de">sentinel-admin_de.qm</file>
+        <file alias="sentinel-admin_en">sentinel-admin_en.qm</file>
+        <file alias="sentinel-admin_fr">sentinel-admin_fr.qm</file>
+    </qresource>
+</RCC>

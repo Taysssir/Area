@@ -1,0 +1,139 @@
+package eos;
+
+option java_package = "fr.eos_innovation.prot";
+option java_outer_classname = "Evigilante";
+
+message Version {
+  required int64 MAJOR = 1;
+  required int64 MINOR = 2;
+  required int64 RELEASE = 3;
+}
+
+message MapInfo {
+  required float resolution = 1;
+  required int64 width = 2;
+  required int64 height = 3;
+}
+
+message ChangeSpeed {                                     
+  required int64 timestamp = 1;
+  required int32 speed = 2;
+}
+
+message ChangeSpeedResponse {
+  enum Result {
+    SUCCEEDED = 0;
+    ROBOT_NOT_READY = 1;
+    MALFORMED = 2;
+  }
+  required int64 timestamp = 1;
+  required Result result = 2;
+}
+
+message GetPatrols {
+  required int64 timestamp = 1;
+}
+
+message GetPatrolsResponse {
+  required int64 timestamp = 1;
+  repeated string patrols = 2;
+}
+
+message TurnAround {
+  enum Sens {
+    CLOCKWISE = 0;
+    UNDERCLOCKWISE = 1;
+  }
+  required int64 timestamp = 1;
+  required Sens sens = 2;
+}
+
+message TurnAroundResponse {
+  enum Result {
+    SUCCEEDED = 0;
+    ROBOT_NOT_READY = 1;
+  }
+  required int64 timestamp = 1;
+  required Result result = 2;
+}
+
+message StartPatrol {
+    enum Sens {
+      CLOCKWISE = 0;
+      UNDERCLOCKWISE = 1;
+    }
+    required int64 timestamp = 1;
+    required string name = 2;
+    required Sens sens = 3;
+}
+
+message StartPatrolResponse {
+    enum Result {
+      SUCCEEDED = 0;
+      ROBOT_ISSUE = 1;
+      PATROL_NOT_PRESENT = 2;
+    }
+    required int64 timestamp = 1;
+    required Result result = 2;
+}
+
+message StopPatrolling {
+    required int64 timestamp = 1;
+}
+
+message StopPatrollingResponse {
+    required int64 timestamp = 1;
+}
+
+message GoBackDocking {
+    required int64 timestamp = 1;
+}
+
+message GoBackDockingResponse {
+    required int64 timestamp = 1;
+}
+
+message RobotPosition {
+  required int64 x = 1;
+  required int64 y = 2;
+  required double theta = 3;
+}
+
+message RobotState {
+  enum  State {
+    READY = 0;
+    DOCKING = 1;
+    CHARGING = 2;
+    PATROLLING = 3;
+    ROBOT_ISSUE = 4;
+  }
+  required State state = 1;
+  required RobotPosition position = 2;
+}
+
+message PatrollingState {
+  required string patrol_name = 1;
+  required int32 percent_done = 2;
+}
+
+message RobotIssue {
+   enum Issue {
+    OBSTRUCTED_LASER = 0;
+    MISSING_MAIN_LASER = 1;
+    MISSING_OPTICAL_CAMERA = 2;
+    MISSING_CONTROL_BOARD = 3;
+    MISSING_SECURITY_DEVICE = 4;
+    CHARGING_FAILURE = 5;
+    NETWORK_FAILURE = 6;
+    ROBOT_BLOCKED = 7;
+    ROBOT_LOST = 8;
+    ROBOT_BATTERY_LOW = 9;
+  }
+  enum Status {
+    ON = 0;
+    OFF = 1;
+  }
+  required Issue issue = 1;
+  required Status status = 2;
+}
+

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogLogin</class>
+ <widget class="QDialog" name="DialogLogin">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>364</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sentinel-Admin</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+        border: 1px solid #AAAAAA;
+        border-radius: 3px;
+        background: rgb(255, 255, 255);
+        color: black;
+        height: 30px;
+}
+QPushButton:hover{
+        background: solid #f0bf8e;
+}
+QPushButton:pressed {
+        background: solid #f07f10;
+        padding-top: 1px;
+}
+QPushButton:checked
+{
+        background-color: solid #f07f10;
+ }
+QPushButton:!enabled
+{
+    color: solid #AAAAAA;
+    border: 1px solid #AAAAAA;;
+}
+QpushButton:focus
+{
+selection-color: yellow;
+}
+
+QListWidget
+{
+ border: 1px solid #8f8f91;
+}
+QListWidget::item:selected
+{color: #333538;
+}
+QListWidget::item
+{ color: #212121;
+border: 2px solid #afafaf;
+}
+
+
+QLineEdit {
+border: 1px solid #8f8f91;
+border-radius: 0px;
+background-color: white;
+min-width: 80px;
+}
+
+QListWidget
+{
+ border: 1px solid #8f8f91;
+}
+QListWidget::item:selected
+{color: #333538;
+}
+QListWidget::item
+{ color: #212121;
+border: 2px solid #afafaf;
+}
+
+
+QComboBox
+{
+    color:black;
+    background-color: white;
+    border-color: rgba(0,0,0,100%);
+    border: 1px solid #8f8f91;
+    border-width: 1px;
+    border-style: solid;
+}
+
+QComboBox QListView
+{
+    border-style: solid;
+    background-color: white;
+     border: 1px solid #8f8f91;
+}
+
+QComboBox::drop-down
+{  background-color: white;
+    width: 20px;
+    border: 1px;
+    border-color:black;
+    border-left-style:none;
+    border-top-style: noner;
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+QComboBox::down-arrow
+{
+    image: url(:/images/comboicon);
+    width: 16px;
+    height: 16px;
+}
+
+QMenu 
+{
+	background: rgb(38,38,38);
+    color: white;
+    border: 1px solid rgb(60,60,60);
+}
+
+&quot;QToolBar&quot;
+{ background-color: rgb(38,38,38); 
+  background-image: url(:/icons/toolbar/background); 
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+QToolBar QToolButton:hover 
+{
+	background : rgb(60,60,60);
+}
+
+QToolBar QToolButton:pressed 
+{
+	background : rgb(50,50,50);
+}</string>
+  </property>
+  <widget class="QLabel" name="label_Login">
+   <property name="geometry">
+    <rect>
+     <x>301</x>
+     <y>210</y>
+     <width>45</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Login :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_login">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>210</y>
+     <width>142</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QLineEdit {
+     border: 1px solid #8f8f91;
+     border-radius: 0px;
+     background-color: white;
+     min-width: 80px;
+ }</string>
+   </property>
+   <property name="inputMask">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_password">
+   <property name="geometry">
+    <rect>
+     <x>301</x>
+     <y>240</y>
+     <width>73</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Password :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_password">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>240</y>
+     <width>142</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QLineEdit {
+     border: 1px solid #8f8f91;
+     border-radius: 0px;
+     background-color: white;
+     min-width: 80px;
+ }</string>
+   </property>
+   <property name="inputMask">
+    <string/>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_remember">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QCheckBox {
+     spacing: 10px;
+     color: white;
+ }
+
+ QCheckBox::indicator {
+     width: 20px;
+     height: 20px;
+ }
+ </string>
+   </property>
+   <property name="text">
+    <string>remember</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_connect">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>310</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>&amp;connexion</string>
+   </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_cancel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>310</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>&amp;close</string>
+   </property>
+   <property name="autoDefault">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>image</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_version">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>100</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>VVVV</string>
+   </property>
+  </widget>
+  <zorder>label_background</zorder>
+  <zorder>label_Login</zorder>
+  <zorder>lineEdit_login</zorder>
+  <zorder>label_password</zorder>
+  <zorder>lineEdit_password</zorder>
+  <zorder>checkBox_remember</zorder>
+  <zorder>pushButton_connect</zorder>
+  <zorder>pushButton_cancel</zorder>
+  <zorder>label_version</zorder>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_login</tabstop>
+  <tabstop>lineEdit_password</tabstop>
+  <tabstop>checkBox_remember</tabstop>
+  <tabstop>pushButton_cancel</tabstop>
+  <tabstop>pushButton_connect</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

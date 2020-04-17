@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PatrolAdminWidget</class>
+ <widget class="QWidget" name="PatrolAdminWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>436</width>
+    <height>539</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>440</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+        border: 1px solid #AAAAAA;
+        border-radius: 3px;
+        background: rgb(255, 255, 255);
+        color: black;
+
+
+        height: 30px;
+}
+QPushButton:hover{
+        background: solid #f0bf8e;
+}
+QPushButton:pressed {
+        background: solid #f07f10;
+        padding-top: 1px;
+}
+QPushButton:!enabled
+{
+    color: solid #AAAAAA;
+    border: 1px solid #AAAAAA;;
+}
+QpushButton:focus
+{
+selection-color: yellow;
+}
+
+QListWidget
+{
+ border: 1px solid #8f8f91;
+}
+QListWidget::item:selected
+{color: #333538;
+}
+QListWidget::item
+{ color: #212121;
+border: 2px solid #afafaf;
+}
+
+
+QLineEdit {
+border: 1px solid #8f8f91;
+border-radius: 0px;
+background-color: white;
+min-width: 80px;
+}
+
+QListWidget
+{
+ border: 1px solid #8f8f91;
+}
+QListWidget::item:selected
+{color: #333538;
+}
+QListWidget::item
+{ color: #212121;
+border: 2px solid #afafaf;
+}
+
+
+QComboBox
+{
+    color:black;
+    background-color: white;
+    border-color: rgba(0,0,0,100%);
+    border: 1px solid #8f8f91;
+    border-width: 1px;
+    border-style: solid;
+}
+
+QComboBox QListView
+{
+    border-style: solid;
+    background-color: white;
+     border: 1px solid #8f8f91;
+}
+
+QComboBox::drop-down
+{  background-color: white;
+    width: 20px;
+    border: 1px;
+    border-color:black;
+    border-left-style:none;
+    border-top-style: noner;
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+QComboBox::down-arrow
+{
+    image: url(:/images/comboicon);
+    width: 16px;
+    height: 16px;
+}
+
+QMenu 
+{
+	background: rgb(38,38,38);
+    color: white;
+    border: 1px solid rgb(60,60,60);
+}
+
+&quot;QToolBar&quot;
+{ background-color: rgb(38,38,38); 
+  background-image: url(:/icons/toolbar/background); 
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+QToolBar QToolButton:hover 
+{
+	background : rgb(60,60,60);
+}
+
+QToolBar QToolButton:pressed 
+{
+	background : rgb(50,50,50);
+}</string>
+  </property>
+  <widget class="QLineEdit" name="lineEdit_updatename">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>454</y>
+     <width>211</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+
+border: 1px solid #8f8f91;
+
+border-radius: 0px;
+
+background-color: white;
+
+min-width: 80px;
+
+}</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_update">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>311</x>
+     <y>450</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Update</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_add">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>16</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_newpatrol">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>24</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name :</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_patrols">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>391</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectItems</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_duplicate">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>490</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Duplicate</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_remove">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>311</x>
+     <y>490</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_nameupdate">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>458</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_newpatrol">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>20</y>
+     <width>201</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_up">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>311</x>
+     <y>410</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Up</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_down">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>410</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Down</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_newpatrol</tabstop>
+  <tabstop>pushButton_add</tabstop>
+  <tabstop>listWidget_patrols</tabstop>
+  <tabstop>pushButton_down</tabstop>
+  <tabstop>pushButton_up</tabstop>
+  <tabstop>lineEdit_updatename</tabstop>
+  <tabstop>pushButton_update</tabstop>
+  <tabstop>pushButton_duplicate</tabstop>
+  <tabstop>pushButton_remove</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
